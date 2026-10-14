@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastdc"
+version = "1.0.0"
+description = "FastDC: fast KV dimensionality compression for decompression-free and attention-accelerated LLM inference"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = [
+    "torch==2.13.0",
+    "triton==3.7.1",
+    "transformers==5.17.0",
+    "safetensors>=0.6",
+    "numpy>=2.0",
+    "datasets==5.0.1",
+]
+
+[project.optional-dependencies]
+vllm = [
+    "vllm==0.29.0",
+    "quart==0.22.0",
+    "aiohttp==3.14.3",
+    "httpx==0.28.1",
+]
+benchmarks = [
+    "rouge-score==0.1.2",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+fastdc = "fastdc.cli:main"
+
+[project.entry-points."vllm.general_plugins"]
+fastdc = "fastdc.vllm_plugin:register"
+
+[tool.setuptools.packages.find]
+include = ["fastdc*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
