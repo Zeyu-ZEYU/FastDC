@@ -1,7 +1,7 @@
 # FastDC
 
 **FastDC: Fast KV Dimensionality Compression for Decompression-Free and Attention-Accelerated LLM Inference**
-(ACM Symposium on Cloud Computing, SoCC '26)
+(ACM Symposium on Cloud Computing, SoCC '26). Supplementary material: [`docs/FastDC_SoCC26_Supplementary.pdf`](docs/FastDC_SoCC26_Supplementary.pdf).
 
 FastDC compresses the Key-Value (KV) cache of large language models with Rotary Positional Embedding (RoPE)
 along the head dimension. It compresses the query (Q) and key (K) *after* RoPE with a rotation matrix R
@@ -191,8 +191,10 @@ examples/ scripts/ tests/
 @inproceedings{zhang2026fastdc,
   title     = {{FastDC}: Fast {KV} Dimensionality Compression for Decompression-Free and Attention-Accelerated {LLM} Inference},
   author    = {Zhang, Zeyu and Shen, Haiying},
-  booktitle = {Proceedings of the 2026 ACM Symposium on Cloud Computing (SoCC '26)},
-  year      = {2026}
+  booktitle = {ACM Symposium on Cloud Computing Volume 2 (SoCC '26 Vol. 2)},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3828161.3857855}
 }
 ```
 
